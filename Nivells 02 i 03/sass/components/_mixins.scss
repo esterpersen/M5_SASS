@@ -1,0 +1,21 @@
+//generals 
+
+@mixin strips-strip-content {
+  height: $height;
+  text-align: $alignment;
+  display: flex;
+  overflow: hidden;
+}
+
+@mixin strip-content {
+  align-items: $alignment;
+  justify-content: $alignment;
+}
+
+//info "compartida" animacions strips
+
+@mixin strip-animacio($name, $duracio) {
+  animation-name: $name;
+  animation-duration: $duracio;
+  animation-timing-function: ease-out;
+}

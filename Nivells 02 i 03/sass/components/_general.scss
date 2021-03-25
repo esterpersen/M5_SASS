@@ -1,0 +1,14 @@
+* {
+	box-sizing: border-box;
+  }
+
+  body {
+	margin: $body-margin;
+  }
+
+  h1 {
+	font-size: $h1-font-size;
+	font-weight: $h1-font-weight;
+	color: $h1-color;
+	font-family: $h1-font-family;
+  }

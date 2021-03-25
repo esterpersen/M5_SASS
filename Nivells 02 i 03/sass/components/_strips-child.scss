@@ -1,0 +1,82 @@
+@for $i from 1 through 5 {
+  //fes animació d'entrada pantalla sobre barra+1
+  .strip:nth-child(#{$i}) .strip_content {
+    @if ($i == 1) {
+      @include strip-animacio(esq-dreta, $strips-child-anim-duration-1);
+      @keyframes esq-dreta {
+        from {
+          transform: translate3d(-100%, 0, 0);
+        }
+      }
+      background-color: $color1;
+    } @else if ($i == 2) {
+      @include strip-animacio(ascendent, $strips-child-anim-duration-2);
+      background-color: $color2;
+      @keyframes ascendent {
+        from {
+          transform: translate3d(0, 100%, 0);
+        }
+      }
+    } @else if ($i == 3) {
+      @include strip-animacio(descendent, $strips-child-anim-duration-3);
+      @keyframes descendent {
+        from {
+          transform: translate3d(0, -100%, 0);
+        }
+      }
+      background-color: $color3;
+    } @else if ($i == 4) {
+      @include strip-animacio(ascendent, $strips-child-anim-duration-4);
+      background-color: $color4;
+
+      @keyframes ascendent {
+        from {
+          transform: translate3d(0, 100%, 0);
+        }
+      }
+    } @else {
+      @include strip-animacio(dreta-esq, $strips-child-anim-duration-5);
+      @keyframes dreta-esq {
+        from {
+          transform: translate3d(100%, 0, 0);
+        }
+      }
+      background-color: $color5;
+    }
+  }
+}
+
+// .strip:nth-child(1) .strip_content {
+//   @include strip-animacio(esq-dreta, $strips-child-anim-duration-1);
+//   @include anim-esq-dreta;
+
+//   background-color: $color1;
+// }
+
+// .strip:nth-child(2) .strip_content {
+//   @include strip-animacio(ascendent, $strips-child-anim-duration-2);
+//   @include anim-ascendent;
+
+//   background-color: $color2;
+// }
+
+// .strip:nth-child(3) .strip_content {
+//   @include strip-animacio(descendent, $strips-child-anim-duration-3);
+//   @include anim-descendent;
+
+//   background-color: $color3;
+// }
+
+// .strip:nth-child(4) .strip_content {
+//   @include strip-animacio(ascendent, $strips-child-anim-duration-4);
+//   @include anim-ascendent;
+
+//   background-color: $color4;
+// }
+
+// .strip:nth-child(5) .strip_content {
+//   @include strip-animacio(dreta-esq, $strips-child-anim-duration-5);
+//   @include anim-dreta-esq;
+
+//   background-color: $color5;
+// }

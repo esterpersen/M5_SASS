@@ -1,0 +1,42 @@
+.strips {
+  @include strips-strip-content();
+  width: $strips-width;
+  cursor: pointer;
+}
+
+.strips .strip {
+  @include strips-strip-content();
+  @include strip-content();
+  position: relative;
+  width: $strips-strip-width;
+  margin: $strips-strip-margin;
+}
+
+.strips .strip .strip_content {
+  @include strips-strip-content();
+  @include strip-content();
+  position: $strips-strip-position;
+  width: $strips-strip-content-width;
+
+  &:before {
+	@include strips-strip-content();
+  
+	content: "";
+	align-items: $alignment;
+	justify-content: $alignment;
+	position: $strips-strip-position;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 20vw;
+	background: $h1-color;
+	opacity: 0.05;
+	transform-origin: $alignment $alignment;
+	transform: skew(30deg) scaleY(1) translate(0, 0);
+	transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  &:hover:before {
+	transform: skew(0deg) scaleX(2) translate(0, 0);
+	opacity: 0.2;
+  }
+}
